@@ -3,18 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>今日のおすすめ</title>
-
 <style>
-
 body{
     margin:0;
     background:#000;
     color:white;
     font-family:sans-serif;
 }
-
 .container{
     width:90%;
     max-width:700px;
@@ -22,17 +18,14 @@ body{
     padding:40px 0;
     text-align:center;
 }
-
 h1{
     font-size:42px;
     margin-bottom:10px;
 }
-
 .sub{
     color:#aaa;
     margin-bottom:40px;
 }
-
 .video-card{
     background:#111;
     border:1px solid rgba(255,255,255,0.1);
@@ -40,27 +33,23 @@ h1{
     overflow:hidden;
     margin-bottom:30px;
 }
-
 .video-card img{
     width:100%;
     display:block;
 }
-
 .video-info{
     padding:20px;
 }
-
 .video-title{
     font-size:28px;
     font-weight:bold;
     margin-bottom:10px;
 }
-
 .video-text{
     color:#aaa;
     margin-bottom:20px;
+    line-height:1.8;
 }
-
 .watch-button{
     display:inline-block;
     padding:12px 24px;
@@ -68,84 +57,73 @@ h1{
     border:1px solid rgba(255,255,255,0.2);
     color:white;
     text-decoration:none;
+    background:#111;
+    cursor:pointer;
+    transition:0.3s;
+    margin:6px;
 }
-
+.watch-button:hover{
+    background:#1d1d1d;
+    border-color:#00aaff;
+}
 .back{
     margin-top:40px;
 }
-
 .back a{
     color:#aaa;
     text-decoration:none;
 }
-
 </style>
 </head>
-
 <body>
-
 <div class="container">
-
 <h1>今日のおすすめ</h1>
-
 <div class="sub">
 毎回ランダムで1本表示されます。
 </div>
-
 <div id="video-area"></div>
-
 <div class="back">
 <a href="index.html">← トップページへ戻る</a>
 </div>
-
 </div>
-
 <script>
-
 const videos = [
-
 {
 title:"レッツゴー！陰陽師",
 text:"ニコニコ動画を象徴する伝説級MAD。",
 url:"https://www.nicovideo.jp/watch/sm9",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/9/9"
 },
-
 {
 title:"患部で止まってすぐ溶ける",
 text:"東方MAD文化を代表する超人気動画。",
 url:"https://www.nicovideo.jp/watch/sm201996",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/201996/201996"
 },
-
 {
 title:"エアーマンが倒せない",
 text:"ネット歌曲の超定番。",
 url:"https://www.nicovideo.jp/watch/sm350170",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/350170/350170"
 },
-
 {
 title:"最終鬼畜妹フランドール・S",
 text:"東方アレンジの代表格。",
 url:"https://www.nicovideo.jp/watch/sm1849248",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/1849248/1849248"
 },
-
 {
 title:"Nyanyanyanyanyanyanya!",
 text:"ボカロ中毒ソング。",
 url:"https://www.nicovideo.jp/watch/sm11509720",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/11509720/11509720"
 },
-
 {
 title:"男女",
 text:"ニコニコ全体の祭り動画。",
 url:"https://www.nicovideo.jp/watch/sm2097776",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/2097776/2097776"
 },
-
 {
 title:"Bad Apple!! PV",
 text:"東方PVの歴史的作品。",
@@ -165,28 +143,10 @@ url:"https://www.nicovideo.jp/watch/sm2959233",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/2959233/2959233"
 },
 {
-title:"魔理沙は大変なものを盗んでいきました",
-text:"東方MAD文化の原点。",
-url:"https://www.nicovideo.jp/watch/sm201996",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/201996/201996"
-},
-{
 title:"思い出はおっくせんまん！",
 text:"ネット老人会涙腺破壊兵器。",
 url:"https://www.nicovideo.jp/watch/sm83",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/83/83"
-},
-{
-title:"松岡修造は大変なものを食べていきました",
-text:"修造MAD全盛期。",
-url:"https://www.nicovideo.jp/watch/sm3984235",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/3984235/3984235"
-},
-{
-title:"患部で止まってすぐ溶ける ～ 狂気の優曇華院",
-text:"東方MADの超定番。",
-url:"https://www.nicovideo.jp/watch/sm15630734",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/15630734/15630734"
 },
 {
 title:"裏表ラバーズ",
@@ -225,22 +185,10 @@ url:"https://www.nicovideo.jp/watch/sm1715919",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/1715919/1715919"
 },
 {
-title:"男女",
-text:"弾幕文化の代表格。",
-url:"https://www.nicovideo.jp/watch/sm2097776",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/2097776/2097776"
-},
-{
 title:"ウサテイ",
 text:"東方MAD超定番。",
 url:"https://www.nicovideo.jp/watch/sm745437",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/745437/745437"
-},
-{
-title:"きしめん ALL STAR",
-text:"MAD文化黄金期。",
-url:"https://www.nicovideo.jp/watch/sm1678477",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/1678477/1678477"
 },
 {
 title:"やらないか",
@@ -249,64 +197,44 @@ url:"https://www.nicovideo.jp/watch/sm975673",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/975673/975673"
 },
 {
-title:"ふちゃぎん家",
-text:"古代ニコニコ動画。",
-url:"https://www.nicovideo.jp/watch/sm10673673",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/10673673/10673673"
-},
-{
-title:"最終鬼畜全部声",
-text:"声MAD文化の極致。",
-url:"https://www.nicovideo.jp/watch/sm3728087",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/3728087/3728087"
-},
-{
-title:"患部で止まってすぐ溶ける Full",
-text:"東方MAD完全版。",
-url:"https://www.nicovideo.jp/watch/sm202066",
-image:"https://nicovideo.cdn.nimg.jp/thumbnails/202066/202066"
-},
-{
 title:"チルノのパーフェクトさんすう教室",
 text:"東方電波曲代表。",
 url:"https://www.nicovideo.jp/watch/sm5054636",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/5054636/5054636"
 }
-
 ];
+// ======================
+// ランダム表示関数
+// ======================
+function showRandomVideo(){
 const randomVideo =
 videos[Math.floor(Math.random() * videos.length)];
-
 document.getElementById("video-area").innerHTML = `
-
 <div class="video-card">
-
 <img src="${randomVideo.image}">
-
 <div class="video-info">
-
 <div class="video-title">
 ${randomVideo.title}
 </div>
-
 <div class="video-text">
 ${randomVideo.text}
 </div>
-
 <a class="watch-button"
 href="${randomVideo.url}"
 target="_blank">
-
 動画を見る
-
 </a>
-
+<br>
+<button class="watch-button"
+onclick="showRandomVideo()">
+次の動画を見る
+</button>
 </div>
 </div>
-
 `;
-
+}
+// 初回表示
+showRandomVideo();
 </script>
-
 </body>
 </html>
