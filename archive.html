@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCHIVE | りずにゃんクラブ</title>
+<style>
+html{
+    scroll-behavior:smooth;
+}
+body{
+    margin:0;
+    background:#050505;
+    color:white;
+    font-family:sans-serif;
+}
+/* ---------- HEADER ---------- */
+.header{
+    padding:100px 20px 70px;
+    text-align:center;
+}
+.header h1{
+    font-size:clamp(48px, 10vw, 90px);
+    margin-bottom:20px;
+}
+.header p{
+    opacity:0.7;
+    font-size:20px;
+}
+/* ---------- SECTION ---------- */
+.year-section{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+.year-title{
+    font-size:50px;
+    margin-bottom:40px;
+    border-left:5px solid #00aaff;
+    padding-left:18px;
+}
+/* ---------- GRID ---------- */
+.archive-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:25px;
+}
+/* ---------- CARD ---------- */
+.archive-card{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.3s;
+}
+.archive-card:hover{
+    transform:translateY(-4px);
+}
+.archive-card img{
+    width:100%;
+    aspect-ratio:16/9;
+    object-fit:cover;
+}
+.archive-content{
+    padding:20px;
+}
+.archive-date{
+    opacity:0.6;
+    margin-bottom:10px;
+    font-size:15px;
+}
+.archive-title{
+    font-size:28px;
+    margin-bottom:14px;
+    font-weight:bold;
+}
+.archive-text{
+    opacity:0.85;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+/* ---------- BUTTON ---------- */
+.archive-button{
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.1);
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+.archive-button:hover{
+    background:white;
+    color:black;
+}
+/* ---------- FOOTER ---------- */
+footer{
+    text-align:center;
+    padding:60px 20px;
+    opacity:0.4;
+}
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>ARCHIVE</h1>
+    <p>
+        累計イベント開催数：170+
+    </p>
+</div>
+<!-- 2026 -->
+<div class="year-section">
+    <div class="year-title">
+        2026
+    </div>
+    <div class="archive-grid">
+        <!-- CARD -->
+        <div class="archive-card">
+            <img src="IMG_2637.jpeg">
+            <div class="archive-content">
+                <div class="archive-date">
+                    2026.06.10
+                </div>
+                <div class="archive-title">
+                    しゅわしゅわ会 #78
+                </div>
+                <div class="archive-text">
+                    毎週開催の交流イベント。<br>
+                    今回は大型集合回。
+                </div>
+                <a class="archive-button"
+                href="https://x.com/"
+                target="_blank">
+                Twitterを見る
+                </a>
+            </div>
+        </div>
+        <!-- CARD -->
+        <div class="archive-card">
+            <img src="IMG_2732.jpeg">
+            <div class="archive-content">
+                <div class="archive-date">
+                    2026.06.03
+                </div>
+                <div class="archive-title">
+                    平日ゲムワ会
+                </div>
+                <div class="archive-text">
+                    人狼系ゲームワールド交流会。
+                </div>
+                <a class="archive-button"
+                href="https://x.com/"
+                target="_blank">
+                Twitterを見る
+                </a>
+            </div>
+        </div>
+        <!-- CARD -->
+        <div class="archive-card">
+            <img src="IMG_2736.jpeg">
+            <div class="archive-content">
+                <div class="archive-date">
+                    2026.05.22
+                </div>
+                <div class="archive-title">
+                    サンリオVfes会
+                </div>
+                <div class="archive-text">
+                    突発イベント交流会。
+                </div>
+                <a class="archive-button"
+                href="https://x.com/"
+                target="_blank">
+                Twitterを見る
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    © rizunyan club
+</footer>
+</body>
+</html>
