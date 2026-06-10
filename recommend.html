@@ -3,78 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>今日のおすすめ</title>
+
 <style>
-body{
-    margin:0;
-    background:#000;
-    color:white;
-    font-family:sans-serif;
-}
-.container{
-    width:90%;
-    max-width:700px;
-    margin:0 auto;
-    padding:40px 0;
-    text-align:center;
-}
-h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
-.sub{
-    color:#aaa;
-    margin-bottom:40px;
-}
-.video-card{
-    background:#111;
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:20px;
-    overflow:hidden;
-    margin-bottom:30px;
-}
-.video-card img{
-    width:100%;
-    display:block;
-}
-.video-info{
-    padding:20px;
-}
-.video-title{
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:10px;
-}
-.video-text{
-    color:#aaa;
-    margin-bottom:20px;
-    line-height:1.8;
-}
-.watch-button{
-    display:inline-block;
-    padding:12px 24px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,0.2);
-    color:white;
-    text-decoration:none;
-    background:#111;
-    cursor:pointer;
-    transition:0.3s;
-    margin:6px;
-}
-.watch-button:hover{
-    background:#1d1d1d;
-    border-color:#00aaff;
-}
-.back{
-    margin-top:40px;
-}
-.back a{
-    color:#aaa;
-    text-decoration:none;
-}
-</style>
-</head>
+
 body{
     margin:0;
     background:#000;
@@ -133,6 +66,13 @@ h1{
     font-size:14px;
 }
 
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
 .watch-button{
     display:inline-block;
     padding:10px 18px;
@@ -143,7 +83,6 @@ h1{
     background:#111;
     cursor:pointer;
     transition:0.3s;
-    margin:4px;
     font-size:14px;
 }
 
@@ -161,165 +100,224 @@ h1{
     text-decoration:none;
     font-size:14px;
 }
+
+</style>
+</head>
+
+<body>
+
 <div class="container">
+
 <h1>今日のおすすめ</h1>
+
 <div class="sub">
 毎回ランダムで1本表示されます。
 </div>
+
 <div id="video-area"></div>
+
 <div class="back">
 <a href="index.html">← トップページへ戻る</a>
 </div>
+
 </div>
+
 <script>
+
 const videos = [
+
 {
 title:"レッツゴー！陰陽師",
 text:"ニコニコ動画を象徴する伝説級MAD。",
 url:"https://www.nicovideo.jp/watch/sm9",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/9/9"
 },
+
 {
 title:"患部で止まってすぐ溶ける",
 text:"東方MAD文化を代表する超人気動画。",
 url:"https://www.nicovideo.jp/watch/sm201996",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/201996/201996"
 },
+
 {
 title:"エアーマンが倒せない",
 text:"ネット歌曲の超定番。",
 url:"https://www.nicovideo.jp/watch/sm350170",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/350170/350170"
 },
+
 {
 title:"最終鬼畜妹フランドール・S",
 text:"東方アレンジの代表格。",
 url:"https://www.nicovideo.jp/watch/sm1849248",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/1849248/1849248"
 },
+
 {
 title:"Nyanyanyanyanyanyanya!",
 text:"ボカロ中毒ソング。",
 url:"https://www.nicovideo.jp/watch/sm11509720",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/11509720/11509720"
 },
+
 {
 title:"男女",
 text:"ニコニコ全体の祭り動画。",
 url:"https://www.nicovideo.jp/watch/sm2097776",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/2097776/2097776"
 },
+
 {
 title:"Bad Apple!! PV",
 text:"東方PVの歴史的作品。",
 url:"https://www.nicovideo.jp/watch/sm8628149",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/8628149/8628149"
 },
+
 {
 title:"組曲『ニコニコ動画』",
 text:"ニコニコ文化そのもの。",
 url:"https://www.nicovideo.jp/watch/sm500873",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/500873/500873"
 },
+
 {
 title:"ニコニコ動画流星群",
 text:"平成ニコニコの集大成。",
 url:"https://www.nicovideo.jp/watch/sm2959233",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/2959233/2959233"
 },
+
 {
 title:"思い出はおっくせんまん！",
 text:"ネット老人会涙腺破壊兵器。",
 url:"https://www.nicovideo.jp/watch/sm83",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/83/83"
 },
+
+{
+title:"松岡修造は大変なものを食べていきました",
+text:"修造MAD全盛期。",
+url:"https://www.nicovideo.jp/watch/sm3984235",
+image:"https://nicovideo.cdn.nimg.jp/thumbnails/3984235/3984235"
+},
+
 {
 title:"裏表ラバーズ",
 text:"wowaka伝説のボカロ曲。",
 url:"https://www.nicovideo.jp/watch/sm8082467",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/8082467/8082467"
 },
+
 {
 title:"ローリンガール",
 text:"ボカロ史に残る名曲。",
 url:"https://www.nicovideo.jp/watch/sm9714351",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/9714351/9714351"
 },
+
 {
 title:"炉心融解",
 text:"ボカロ黄金期代表。",
 url:"https://www.nicovideo.jp/watch/sm5602903",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/5602903/5602903"
 },
+
 {
 title:"みくみくにしてあげる♪",
 text:"初期ボカロ文化の象徴。",
 url:"https://www.nicovideo.jp/watch/sm1097445",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/1097445/1097445"
 },
+
 {
 title:"ダブルラリアット",
 text:"巡音ルカ代表曲。",
 url:"https://www.nicovideo.jp/watch/sm6066183",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/6066183/6066183"
 },
+
 {
 title:"メルト",
 text:"ボカロ史を変えた超名曲。",
 url:"https://www.nicovideo.jp/watch/sm1715919",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/1715919/1715919"
 },
+
 {
 title:"ウサテイ",
 text:"東方MAD超定番。",
 url:"https://www.nicovideo.jp/watch/sm745437",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/745437/745437"
 },
+
 {
 title:"やらないか",
 text:"阿部さん伝説。",
 url:"https://www.nicovideo.jp/watch/sm975673",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/975673/975673"
 },
+
 {
 title:"チルノのパーフェクトさんすう教室",
 text:"東方電波曲代表。",
 url:"https://www.nicovideo.jp/watch/sm5054636",
 image:"https://nicovideo.cdn.nimg.jp/thumbnails/5054636/5054636"
 }
+
 ];
-// ======================
-// ランダム表示関数
-// ======================
+
 function showRandomVideo(){
+
 const randomVideo =
 videos[Math.floor(Math.random() * videos.length)];
+
 document.getElementById("video-area").innerHTML = `
+
 <div class="video-card">
+
 <img src="${randomVideo.image}">
+
 <div class="video-info">
+
 <div class="video-title">
 ${randomVideo.title}
 </div>
+
 <div class="video-text">
 ${randomVideo.text}
 </div>
+
+<div class="buttons">
+
 <a class="watch-button"
 href="${randomVideo.url}"
 target="_blank">
+
 動画を見る
+
 </a>
-<br>
+
 <button class="watch-button"
 onclick="showRandomVideo()">
+
 次の動画を見る
+
 </button>
+
+</div>
+
 </div>
 </div>
+
 `;
+
 }
-// 初回表示
+
 showRandomVideo();
+
 </script>
+
 </body>
 </html>
