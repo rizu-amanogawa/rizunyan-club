@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>りずにゃんクラブ</title>
 <style>
+html{
+    scroll-behavior:smooth;
+}
 body{
     margin:0;
     background:#050505;
@@ -12,39 +15,61 @@ body{
     font-family:sans-serif;
     overflow-x:hidden;
 }
+/* ---------- TOP ---------- */
 .hero{
-    height:70vh;
+    height:75vh;
     background:
     linear-gradient(
         rgba(0,0,0,0.45),
-        rgba(0,0,0,0.85)
+        rgba(0,0,0,0.82)
     ),
-    url("IMG_2641.jpeg");
-    background-size:cover;
-    background-position:center;
+    url("IMG_2736.jpeg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center top;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:40px 20px;
+    padding:20px;
     box-sizing:border-box;
 }
 .hero h1{
-    font-size:clamp(32px, 10vw, 58px);
-    margin-bottom:20px;
-    letter-spacing:2px;
-    line-height:1.1;
+    font-size:clamp(42px, 11vw, 72px);
+    margin:0 0 20px 0;
+    line-height:1.2;
     word-break:keep-all;
 }
 .hero p{
+    font-size:clamp(18px, 4vw, 28px);
+    line-height:1.8;
     opacity:0.9;
     max-width:700px;
-    line-height:1.8;
-    font-size:20px;
 }
+/* ---------- MENU ---------- */
+.menu{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background:#0d0d0d;
+    border-top:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    padding:18px 10px;
+}
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:bold;
+    opacity:0.9;
+}
+/* ---------- SECTION ---------- */
 .section{
-    padding:80px 20px;
+    padding:90px 20px;
     max-width:1100px;
     margin:auto;
 }
@@ -54,6 +79,7 @@ body{
     border-left:5px solid #00aaff;
     padding-left:18px;
 }
+/* ---------- CARD ---------- */
 .card{
     background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
@@ -63,14 +89,15 @@ body{
 }
 .card h3{
     margin-top:0;
-    font-size:42px;
-    margin-bottom:25px;
+    font-size:38px;
+    margin-bottom:20px;
 }
 .card p{
     line-height:1.9;
     opacity:0.9;
     font-size:20px;
 }
+/* ---------- GALLERY ---------- */
 .gallery{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
@@ -88,28 +115,36 @@ body{
 .gallery img:hover{
     transform:scale(1.02);
 }
-.link-section{
-    text-align:center;
-    padding:100px 20px;
+/* ---------- NEWS ---------- */
+.news-box{
+    max-height:220px;
+    overflow-y:auto;
+    padding-right:10px;
 }
-.button-group{
+.news-item{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    font-size:20px;
+}
+/* ---------- LINK ---------- */
+.link-buttons{
     display:flex;
     flex-wrap:wrap;
-    justify-content:center;
     gap:20px;
     margin-top:30px;
 }
-.button{
-    padding:16px 36px;
-    border:1px solid rgba(255,255,255,0.25);
+.link-button{
+    display:inline-block;
+    padding:16px 28px;
+    border:1px solid rgba(255,255,255,0.15);
     border-radius:14px;
     color:white;
     text-decoration:none;
-    font-size:20px;
     transition:0.3s;
     background:rgba(255,255,255,0.04);
+    font-size:20px;
 }
-.button:hover{
+.link-button:hover{
     background:white;
     color:black;
 }
@@ -118,8 +153,9 @@ body{
     opacity:0.7;
     font-size:18px;
 }
+/* ---------- FOOTER ---------- */
 footer{
-    padding:40px 20px;
+    padding:50px 20px;
     text-align:center;
     opacity:0.4;
     font-size:15px;
@@ -127,6 +163,7 @@ footer{
 </style>
 </head>
 <body>
+<!-- TOP -->
 <div class="hero">
     <h1>
         りずにゃんクラブ
@@ -136,17 +173,37 @@ footer{
         初心者から常連まで、みんなで楽しく遊ぶことをコンセプトに活動しています。
     </p>
 </div>
-<div class="section">
+<!-- MENU -->
+<div class="menu">
+    <a href="#news">NEWS</a>
+    <a href="#about">概要</a>
+    <a href="#activity">活動内容</a>
+    <a href="#link">LINK</a>
+</div>
+<!-- NEWS -->
+<div class="section" id="news">
+    <h2>NEWS</h2>
+    <div class="card">
+        <div class="news-box">
+            <div class="news-item">
+                2026.06.10 ホームページ開設
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ABOUT -->
+<div class="section" id="about">
     <h2>ABOUT</h2>
     <div class="card">
         <p>
             りずにゃんクラブは、VRChatを中心に活動するコミュニティです。<br><br>
-            初心者さんを中心に、みんなで楽しく遊ぶことをコンセプトに活動しています。<br>
-            目指せ世界平和！
+            ワールド巡り、雑談、イベント交流などを通して、<br>
+            「気軽に遊べる場所」を目指して活動しています。
         </p>
     </div>
 </div>
-<div class="section">
+<!-- ACTIVITY -->
+<div class="section" id="activity">
     <h2>ACTIVITY</h2>
     <div class="card">
         <h3>
@@ -199,22 +256,25 @@ footer{
         </div>
     </div>
 </div>
-<div class="link-section">
+<!-- LINK -->
+<div class="section" id="link">
     <h2>LINK</h2>
-    <div class="button-group">
-        <a class="button"
-        href="https://x.com/rizu45_vrc?s=11&t=kEKwr-6pD3eoYZtbXhb_TA"
-        target="_blank">
-        Twitter
-        </a>
-        <a class="button"
-        href="https://vrc.group/RIZU.4455"
-        target="_blank">
-        VRChat Group
-        </a>
-    </div>
-    <div class="notice">
-        お問い合わせはDMにてお願いします。
+    <div class="card">
+        <div class="link-buttons">
+            <a class="link-button"
+            href="https://x.com/rizu45_vrc?s=11&t=kEKwr-6pD3eoYZtbXhb_TA"
+            target="_blank">
+            Twitter
+            </a>
+            <a class="link-button"
+            href="https://vrc.group/RIZU.4455"
+            target="_blank">
+            VRChat Group
+            </a>
+        </div>
+        <div class="notice">
+            お問い合わせはDMにてお願いします。
+        </div>
     </div>
 </div>
 <footer>
