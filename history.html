@@ -1,158 +1,70 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-<meta name="description"
-content="りずにゃんクラブの成り立ち">
-<title>
-りずにゃんクラブ | 成り立ち
-</title>
-<style>
-html{
-    scroll-behavior:smooth;
-}
-*{
-    box-sizing:border-box;
-}
-body{
-    margin:0;
-    background:#050505;
-    color:white;
-    font-family:sans-serif;
-    overflow-x:hidden;
-}
-.hero{
-    min-height:24vh;
-    background:
-    linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.9)
-    ),
-    url("IMG_2641.jpeg");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-}
-.hero h1{
-    font-size:clamp(34px, 9vw, 54px);
-    margin:0;
-}
-.section{
-    padding:34px 16px;
-    max-width:620px;
-    margin:auto;
-}
-.history-card{
-    margin-bottom:50px;
-}
-.history-card img{
-    width:100%;
-    border-radius:18px;
-    margin-bottom:16px;
-    border:1px solid rgba(255,255,255,0.08);
-    object-fit:cover;
-}
-.history-card h2{
-    font-size:clamp(30px, 8vw, 46px);
-    margin-top:0;
-    margin-bottom:18px;
-    border-left:5px solid #00aaff;
-    padding-left:12px;
-}
-.history-card p{
-    line-height:2;
-    font-size:16px;
-    opacity:0.94;
-    margin:0;
-}
-.link-button{
-    width:100%;
-    min-height:54px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#101010;
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:14px;
-    color:white;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:bold;
-    margin-top:30px;
-    transition:0.25s;
-}
-.link-button:hover{
-    border-color:#00aaff;
-    background:#151515;
-}
-footer{
-    padding:30px 10px;
-    text-align:center;
-    opacity:0.45;
-    font-size:11px;
-}
-</style>
-</head>
 <body>
-<div class="hero">
-    <h1>
-        成り立ち
-    </h1>
-</div>
-<div class="section">
-    <!-- HISTORY 1 -->
-    <div class="history-card">
-        <img src="IMG_2637.jpeg">
-        <h2>
-            設立
-        </h2>
-        <p>
-            りずにゃんクラブは、
-            VRChatを通じた交流を目的として設立されました。<br><br>
-            初心者でも気軽に遊べる環境づくりを目指し、
-            少人数での雑談会やワールド巡りから活動を開始しました。
-        </p>
+<header class="hero">
+    <img src="IMG_2640.jpeg" alt="コミュニティのあゆみ">
+    <div class="hero-title">コミュニティのあゆみ</div>
+</header>
+<section class="section">
+    <h2>コミュニティのあゆみ</h2>
+    <div class="card">
+        <div class="history-block">
+            <h3>黎明期（2024.7〜）</h3>
+            <p>
+                「私と遊びたいと思ってくれる人」を求めて、
+                通っていたイベントやフレンドプラスインスタンスで出会った人たちに
+                積極的に声をかけ続けました。
+            </p>
+        </div>
+        <div class="history-block">
+            <h3>成長期（2024.10〜）</h3>
+            <p>
+                Twitterでイベント告知を出し始め、
+                開催回数をカウントするようになりました。<br>
+                当時の平均参加人数は10人前後だったと思います。
+            </p>
+        </div>
+        <div class="history-block">
+            <h3>安定期（2025.2〜）</h3>
+            <p>
+                イベント回数が第30回に到達。<br>
+                常連文化が根付き始めたことで、
+                荒らし対策や管理機能の強化を目的にグループを作成しました。<br>
+                Discordサーバーも立ち上げ、
+                VRChat外でも交流できる環境を整えました。
+            </p>
+        </div>
+        <div class="history-block">
+            <h3>転換期（2025.5〜）</h3>
+            <p>
+                この頃になると、
+                個人グループの枠を超え、「join戦争」が発生するようになります。<br>
+                毎週金曜日を定例飲み会として固定し、
+                安定して交流できる場を作りました。<br>
+                現在では「しゅわしゅわ会」と呼んでいます。
+            </p>
+        </div>
+        <div class="history-block">
+            <h3>拡大期（2025.12〜）</h3>
+            <p>
+                フレンド伝いでさらに人が増え、
+                グループ参加人数は200人を突破。<br>
+                有志による部活動が発足され、
+                コミュニティとしての地盤がより強固になっていきました。
+            </p>
+        </div>
+        <div class="history-block">
+            <h3>現在（2026.6）</h3>
+            <p>
+                イベント開催数は170回に到達。<br>
+                しゅわしゅわ会の平均参加人数は60〜70人。<br>
+                常時滞在人数も30〜40人規模になっています。
+            </p>
+        </div>
+        <a class="link-button" href="./index.html#about">
+            トップへ戻る
+        </a>
     </div>
-    <!-- HISTORY 2 -->
-    <div class="history-card">
-        <img src="IMG_2732.jpeg">
-        <h2>
-            イベント活動開始
-        </h2>
-        <p>
-            交流イベント「しゅわしゅわ会」を中心に、
-            継続的なイベント開催を開始。<br><br>
-            その後、
-            ゲームワールド会や突発イベントなど、
-            活動内容を拡大していきました。
-        </p>
-    </div>
-    <!-- HISTORY 3 -->
-    <div class="history-card">
-        <img src="IMG_2739.jpeg">
-        <h2>
-            現在
-        </h2>
-        <p>
-            現在は初心者から常連まで、
-            幅広い参加者が交流するコミュニティとして活動しています。<br><br>
-            「気軽に遊べる場所」をコンセプトに、
-            VRChatでの交流を続けています。
-        </p>
-    </div>
-    <a class="link-button"
-    href="./index.html#about">
-    トップへ戻る
-    </a>
-</div>
+</section>
 <footer>
-    © rizunyan club
+    ©2024-2026 Rizunyan Club
 </footer>
 </body>
-</html>
