@@ -4,18 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
-<meta name="description"
-content="りずにゃんクラブ ご挨拶">
+
 <title>
-りずにゃんクラブ | ご挨拶
+りずにゃんクラブ | オーナーからの挨拶
 </title>
+
 <style>
 html{
     scroll-behavior:smooth;
 }
+
 *{
     box-sizing:border-box;
 }
+
 body{
     margin:0;
     background:#050505;
@@ -23,140 +25,205 @@ body{
     font-family:sans-serif;
     overflow-x:hidden;
 }
+
+/* ---------- TOP ---------- */
 .hero{
-    min-height:26vh;
+    min-height:42vh;
     background:
     linear-gradient(
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.88)
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.82)
     ),
-    url("IMG_2733.jpeg");
+    url("VRChat_2026-03-15_22-29-09.820_1920x1080.png");
     background-size:cover;
-    background-position:center;
+    background-position:center center;
+    background-repeat:no-repeat;
+
     display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:32px 20px;
 }
-.hero h1{
-    font-size:clamp(34px, 9vw, 56px);
-    margin:0;
+
+.owner{
+    font-size:14px;
+    opacity:0.82;
+    margin-bottom:6px;
 }
+
+.owner-name{
+    font-size:34px;
+    font-weight:bold;
+    line-height:1.2;
+}
+
+/* ---------- SECTION ---------- */
 .section{
     max-width:720px;
     margin:auto;
-    padding:40px 18px;
+    padding:34px 16px;
 }
-.message-box{
-    background:#0d0d0d;
+
+.section h2{
+    font-size:clamp(34px, 9vw, 54px);
+    margin-top:0;
+    margin-bottom:18px;
+
+    border-left:5px solid #00aaff;
+    padding-left:12px;
+    line-height:1.1;
+}
+
+/* ---------- CARD ---------- */
+.card{
+    background:rgba(255,255,255,0.04);
     border:1px solid rgba(255,255,255,0.08);
-    border-radius:24px;
+    border-radius:20px;
     padding:24px;
-    overflow:hidden;
+    backdrop-filter:blur(6px);
 }
-.message-box img{
-    width:100%;
-    border-radius:18px;
-    margin-bottom:22px;
-    object-fit:cover;
-    border:1px solid rgba(255,255,255,0.08);
-}
-.name{
-    text-align:center;
-    margin-bottom:36px;
-}
-.name h2{
-    margin:0;
-    font-size:34px;
-}
-.name p{
-    margin-top:10px;
-    opacity:0.7;
-    font-size:14px;
-}
+
 .message{
     line-height:2.1;
     font-size:16px;
     opacity:0.95;
 }
-.message p{
-    margin-bottom:36px;
+
+/* ---------- BUTTON ---------- */
+.link-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:28px;
 }
+
 .link-button{
     width:100%;
-    min-height:56px;
+    min-height:58px;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    text-align:center;
+
     background:#101010;
     border:1px solid rgba(255,255,255,0.12);
     border-radius:14px;
+
     color:white;
     text-decoration:none;
-    font-size:15px;
+
+    font-size:16px;
     font-weight:bold;
-    margin-top:34px;
+
     transition:0.25s;
 }
+
 .link-button:hover{
     border-color:#00aaff;
     background:#151515;
+    transform:translateY(-2px);
 }
+
+/* ---------- FOOTER ---------- */
 footer{
-    padding:28px 10px;
+    padding:34px 10px;
     text-align:center;
     opacity:0.45;
     font-size:11px;
 }
+
+/* ---------- MOBILE ---------- */
+@media(max-width:480px){
+
+    .hero{
+        min-height:36vh;
+        padding:24px 18px;
+    }
+
+    .owner-name{
+        font-size:28px;
+    }
+
+    .card{
+        padding:20px;
+    }
+
+    .message{
+        font-size:15px;
+        line-height:2;
+    }
+}
 </style>
 </head>
+
 <body>
+
+<!-- TOP -->
 <div class="hero">
-    <h1>
-        ご挨拶
-    </h1>
-</div>
-<div class="section">
-    <div class="message-box">
-        <img src="IMG_2735.jpeg">
-        <div class="name">
-            <h2>
-                天野河りず
-            </h2>
-            <p>
-                りずにゃんクラブ オーナー
-            </p>
-        </div>
-        <div class="message">
-            <p>
-                りずにゃんクラブは、
-                VRChatを通じた交流を目的として活動しているコミュニティです。
-            </p>
-            <p>
-                初心者の方でも気軽に参加できる空間づくりを大切にし、
-                ワールド巡りや交流イベントを中心に活動しています。
-            </p>
-            <p>
-                VRChatには、
-                人との出会いや交流を楽しめる魅力があります。<br><br>
-                このコミュニティが、
-                誰かにとって「安心して遊べる場所」になれば嬉しく思います。
-            </p>
-            <p>
-                これからも、
-                楽しく穏やかなコミュニティづくりを目指して活動していきます。<br><br>
-                今後ともよろしくお願いいたします。
-            </p>
-        </div>
+
+    <div class="owner">
+        オーナー
     </div>
-    <a class="link-button"
-    href="./index.html#about">
-    トップへ戻る
-    </a>
+
+    <div class="owner-name">
+        天野河りず
+    </div>
+
 </div>
+
+<!-- MESSAGE -->
+<div class="section">
+
+    <h2>
+        ご挨拶
+    </h2>
+
+    <div class="card">
+
+        <div class="message">
+
+            りずにゃんクラブは、<br>
+            「気軽に集まれて、安心して遊べる場所」を目指して活動しているコミュニティです。<br><br>
+
+            VRChatの世界には、色々な楽しみ方があります。<br>
+            ワールド巡り、雑談、イベント、ゲーム、写真撮影。<br>
+            その中で、誰かと笑いながら過ごす時間そのものが、
+            一番大切だと私は思っています。<br><br>
+
+            初心者の方も、長くVRChatを遊んでいる方も、
+            「ここなら居やすいな」と思える空間を作れるよう、
+            日々試行錯誤しながら活動しています。<br><br>
+
+            まだまだ小さなコミュニティではありますが、
+            参加してくれる皆さんのおかげで、
+            少しずつ輪が広がっています。<br><br>
+
+            これからも、
+            りずにゃんクラブをよろしくお願いします。
+
+        </div>
+
+        <div class="link-buttons">
+
+            <a class="link-button"
+            href="./index.html#about">
+
+            トップページへ戻る
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
 <footer>
-    © rizunyan club
+    © 2024-2026 Rizunyan Club
 </footer>
+
 </body>
 </html>
