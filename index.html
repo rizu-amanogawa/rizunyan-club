@@ -2,6 +2,9 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <meta name="description"
 content="りずにゃんクラブはVRChatを中心に活動するコミュニティです。イベント交流、ゲームワールド会、しゅわしゅわ会などを開催しています。">
 
@@ -11,6 +14,10 @@ content="りずにゃんクラブはVRChatを中心に活動するコミュニ�
 
 html{
     scroll-behavior:smooth;
+}
+
+*{
+    box-sizing:border-box;
 }
 
 body{
@@ -24,18 +31,18 @@ body{
 /* ---------- TOP ---------- */
 
 .hero{
-    height:42vh;
+    min-height:38vh;
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.52),
         rgba(0,0,0,0.82)
     ),
     url("IMG_2641.jpeg");
 
     background-size:cover;
     background-repeat:no-repeat;
-    background-position:center top;
+    background-position:center center;
 
     display:flex;
     flex-direction:column;
@@ -44,22 +51,26 @@ body{
 
     text-align:center;
 
-    padding:12px 16px;
-
-    box-sizing:border-box;
+    padding:44px 18px 38px;
 }
 
 .hero h1{
-    font-size:clamp(34px, 9vw, 52px);
-    margin:0 0 8px 0;
-    line-height:1.2;
+    font-size:clamp(34px, 9vw, 54px);
+
+    margin:0 0 10px;
+
+    line-height:1.15;
 }
 
 .hero p{
-    font-size:clamp(13px, 3.5vw, 18px);
-    line-height:1.6;
-    opacity:0.9;
-    max-width:500px;
+    font-size:clamp(13px, 3.6vw, 18px);
+
+    line-height:1.7;
+
+    opacity:0.92;
+
+    max-width:520px;
+
     margin:0;
 }
 
@@ -70,44 +81,54 @@ body{
     top:0;
     z-index:1000;
 
+    width:100%;
+
     display:flex;
     justify-content:space-around;
     align-items:center;
 
-    background:#0d0d0d;
+    background:rgba(10,10,10,0.95);
 
     border-top:1px solid rgba(255,255,255,0.08);
     border-bottom:1px solid rgba(255,255,255,0.08);
 
-    padding:9px 6px;
+    padding:10px 4px;
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 }
 
 .menu a{
     color:white;
+
     text-decoration:none;
-    font-size:12px;
+
+    font-size:11px;
     font-weight:bold;
-    opacity:0.9;
-    letter-spacing:1px;
+
+    opacity:0.92;
+
+    letter-spacing:0.8px;
 }
 
 /* ---------- SECTION ---------- */
 
 .section{
-    padding:22px 14px;
-    max-width:520px;
+    width:100%;
+
+    max-width:560px;
+
     margin:auto;
+
+    padding:18px 14px;
 }
 
 .section h2{
     font-size:clamp(24px, 7vw, 38px);
 
-    margin-top:0;
-    margin-bottom:12px;
+    margin:0 0 14px;
 
     border-left:4px solid #00aaff;
+
     padding-left:10px;
 
     line-height:1.1;
@@ -124,32 +145,34 @@ body{
 
     padding:14px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
     backdrop-filter:blur(6px);
 }
 
 .card h3{
-    margin-top:0;
-    margin-bottom:8px;
+    margin:0 0 8px;
 
     font-size:22px;
 
-    line-height:1.2;
+    line-height:1.25;
 }
 
 .card p{
-    line-height:1.6;
-    opacity:0.9;
-    font-size:13px;
-
     margin:0;
+
+    line-height:1.75;
+
+    opacity:0.92;
+
+    font-size:13px;
 }
 
 /* ---------- GALLERY ---------- */
 
 .gallery{
     display:grid;
+
     grid-template-columns:repeat(2, 1fr);
 
     gap:6px;
@@ -160,7 +183,7 @@ body{
 .gallery img{
     width:100%;
 
-    height:90px;
+    aspect-ratio:16/9;
 
     object-fit:cover;
 
@@ -179,8 +202,8 @@ body{
 
 .news-box{
     max-height:120px;
+
     overflow-y:auto;
-    padding-right:4px;
 }
 
 .news-item{
@@ -189,6 +212,8 @@ body{
     border-bottom:1px solid rgba(255,255,255,0.08);
 
     font-size:12px;
+
+    line-height:1.6;
 }
 
 /* ---------- LINK ---------- */
@@ -196,6 +221,7 @@ body{
 .link-buttons{
     display:flex;
     flex-direction:column;
+
     gap:8px;
 
     margin-top:10px;
@@ -203,7 +229,8 @@ body{
 
 .link-button{
     width:100%;
-    height:48px;
+
+    min-height:48px;
 
     display:flex;
     align-items:center;
@@ -222,7 +249,11 @@ body{
     font-size:13px;
     font-weight:bold;
 
+    text-align:center;
+
     transition:0.25s;
+
+    padding:0 12px;
 }
 
 .link-button:hover{
@@ -236,23 +267,41 @@ body{
 .notice{
     margin-top:14px;
 
-    opacity:0.7;
+    opacity:0.68;
 
     font-size:11px;
 
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* ---------- FOOTER ---------- */
 
 footer{
-    padding:18px 10px;
+    padding:18px 10px 24px;
 
     text-align:center;
 
     opacity:0.4;
 
     font-size:10px;
+}
+
+/* ---------- PC ---------- */
+
+@media(min-width:768px){
+
+    .hero{
+        min-height:48vh;
+    }
+
+    .section{
+        padding:24px 18px;
+    }
+
+    .gallery{
+        gap:8px;
+    }
+
 }
 
 </style>
