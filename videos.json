@@ -1,1 +1,8 @@
-あ
+[
+  {
+    "title":"テスト動画",
+    "url":"https://www.nicovideo.jp/watch/sm9",
+    "image":"https://nicovideo.cdn.nimg.jp/thumbnails/9/9",
+    "text":"動作確認用"
+  }
+]
