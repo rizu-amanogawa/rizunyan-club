@@ -157,16 +157,41 @@ function showRandomVideo(){
         return;
     }
 
-    let newIndex;
+    let history =
+        JSON.parse(
+            localStorage.getItem("videoHistory") || "[]"
+        );
 
-    do{
-        newIndex = Math.floor(Math.random() * videos.length);
+    let availableVideos =
+        videos.filter(
+            video => !history.includes(video.url)
+        );
+
+    if(availableVideos.length === 0){
+
+        history = [];
+
+        availableVideos = videos;
+
     }
-    while(newIndex === currentIndex && videos.length > 1);
 
-    currentIndex = newIndex;
+    const randomVideo =
+        availableVideos[
+            Math.floor(
+                Math.random() * availableVideos.length
+            )
+        ];
 
-    const randomVideo = videos[currentIndex];
+    history.push(randomVideo.url);
+
+    if(history.length > 10){
+        history.shift();
+    }
+
+    localStorage.setItem(
+        "videoHistory",
+        JSON.stringify(history)
+    );
 
     document.getElementById("video-area").innerHTML = `
     <div class="video-card">
